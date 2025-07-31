@@ -1,19 +1,36 @@
 import sys
 import pygame
 
-pygame.init()
+class Game:
+    def __init__(self):
+        pygame.init()
+        pygame.display.set_caption('cataclysm')
+        self.window = pygame.display.set_mode((640, 480))
+        self.clock = pygame.time.Clock() 
+        #self.img = pygame.image.load()
 
-window = pygame.display.set_mode(640,480)
+    def run(self):
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+                if event.type == pygame.KEYDOWN:
+                    if event.type == pygame.K_UP:
+                        self.movement[0] = True
+                    if event.type == pygame.K_DOWN:
+                        self.movement[1] = True
+                if event.type == pygame.KEYUP:
+                    if event.type == pygame.K_UP:
+                        self.movement[0] = False
+                    if event.type == pygame.K_DOWN:
+                        self.movement[1] = False
 
-clock = pygame.time.Clock()
+            pygame.display.update()
+            self.clock.tick(60)
 
-while True:
+Game().run()
 
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
 
-    pygame.display.update()
-    clock.tick(60)
+
 
