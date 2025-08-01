@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://dmwaoqjp6iwfu"]
+[gd_scene load_steps=16 format=3 uid="uid://dmwaoqjp6iwfu"]
 
 [ext_resource type="Texture2D" uid="uid://dnb13d2b4sg5k" path="res://Assets/assetscat.png" id="1_f50pn"]
 [ext_resource type="Script" uid="uid://owc02kyphra3" path="res://Scripts/character.gd" id="1_pjt0s"]
+[ext_resource type="Texture2D" uid="uid://c5gn8bhhua74o" path="res://Assets/pixil-frame-0 (13).png" id="3_owm7s"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_glpr6"]
 atlas = ExtResource("1_f50pn")
@@ -30,6 +31,18 @@ region = Rect2(160, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_qp52p"]
 atlas = ExtResource("1_f50pn")
 region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nytcm"]
+atlas = ExtResource("3_owm7s")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejsiy"]
+atlas = ExtResource("3_owm7s")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2mse5"]
+atlas = ExtResource("3_owm7s")
+region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dd465"]
 animations = [{
@@ -66,6 +79,23 @@ animations = [{
 "loop": true,
 "name": &"new_animation_1",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nytcm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejsiy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2mse5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejsiy")
+}],
+"loop": true,
+"name": &"new_animation_2",
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f50pn"]
@@ -76,9 +106,9 @@ script = ExtResource("1_pjt0s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_dd465")
-animation = &"new_animation"
+animation = &"new_animation_2"
 autoplay = "new_animation"
-frame_progress = 0.276945
+frame_progress = 0.102283
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.25, 1.25)

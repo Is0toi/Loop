@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://b4cknt30hpcxl"]
+
+[ext_resource type="Texture2D" uid="uid://m30ha2su44m6" path="res://Assets/pixil-frame-0 (12).png" id="1_f50pn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5cjw"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(0, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_clwji"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(32, 224, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_85dp7"]
+atlas = ExtResource("1_f50pn")
+region = Rect2(64, 224, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ostu5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5cjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clwji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_85dp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_clwji")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 4.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ostu5")
+animation = &"new_animation"
+frame_progress = 0.975993
